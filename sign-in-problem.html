@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign-in didn't finish · MeetChime</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/"><img src="/assets/app-icon.png" alt="">MeetChime</a>
+    <nav class="nav"><a href="mailto:support@meetchime.app">Support</a></nav>
+  </div>
+</header>
+<main class="center">
+  <div class="result">
+    <div class="status err"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 7v6M12 17h.01"/></svg></div>
+    <h1>Sign-in didn't finish</h1>
+    <p><span id="reason">Something went wrong while connecting to Google.</span> Open MeetChime from the menu bar and choose Sign in with Google to try again.</p>
+    <p class="note">Nothing was saved. If this keeps happening, email <a href="mailto:support@meetchime.app">support@meetchime.app</a>.</p>
+  </div>
+</main>
+<script>
+  // The app links here with ?reason=cancelled|state|exchange. Only known values are shown.
+  const REASONS = {
+    cancelled: 'You cancelled the Google sign-in.',
+    state: "This sign-in link didn't match the one MeetChime started.",
+    exchange: "MeetChime couldn't finish connecting to Google.",
+  };
+  const reason = new URLSearchParams(location.search).get('reason');
+  if (REASONS[reason]) document.getElementById('reason').textContent = REASONS[reason];
+</script>
+</body>
+</html>
