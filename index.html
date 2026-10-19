@@ -34,6 +34,9 @@
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "Meeting reminder",
   "operatingSystem": "macOS 14 or later",
+  "softwareVersion": "0.1.0",
+  "downloadUrl": "https://github.com/hhussain119/meetchime-site/releases/latest/download/MeetChime.dmg",
+  "fileSize": "12.5MB",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "publisher": { "@type": "Organization", "name": "MeetChime", "url": "https://meetchime.app/", "email": "support@meetchime.app" }
 }
@@ -179,7 +182,7 @@
 <script>
   // Until the first signed release exists, the download buttons ask people to get in touch instead.
   // Set RELEASED to true once a release with MeetChime.dmg is published.
-  const RELEASED = false;
+  const RELEASED = true;
   const DMG = 'https://github.com/hhussain119/meetchime-site/releases/latest/download/MeetChime.dmg';
   for (const a of document.querySelectorAll('a.download')) {
     if (RELEASED) {
